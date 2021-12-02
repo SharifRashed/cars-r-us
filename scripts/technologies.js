@@ -1,7 +1,7 @@
-import { getWheels, setWheels } from "./database.js"
+import { getTechnologies, setTechnology } from "./database.js"
 
 
-const wheels = getWheels()
+const technologies = getTechnologies()
 
 // document.addEventListener(
 //     "change",
@@ -15,21 +15,21 @@ const wheels = getWheels()
 document.addEventListener(
     "change",
     (changeEvent) => {
-        if (changeEvent.target.id === "wheel") {
+        if (changeEvent.target.id === "technology") {
             const chosenOption = changeEvent.target.value
             console.log(chosenOption)  // "1" or "2"
         }
     }
 )
 
-export const Wheels = () => {
+export const Technologies = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements
-    const listItems = wheels.map(wheel => {
+    const listItems = technologies.map(technology => {
 
         return `<li>
-        <input type="radio" value="1" name="resource"> First option
+        <input type="radio" name="technology" value="${technology.id}" /> ${technology.packageType}
         </li>`
     })
 

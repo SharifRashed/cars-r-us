@@ -6,19 +6,19 @@
 
 */
 const database = {
-    interior: [
+    interiors: [
         { id: 1, style: "Beige Fabric", price: 5000 },
         { id: 2, style: "Charcoal Fabric", price: 7100 },
         { id: 3, style: "White Leather", price: 9650 },
         { id: 4, style: "Black Leather", price: 9650 }
     ],
-    paint: [
+    paints: [
         { id: 1, paint: "Silver", price: 405 },
         { id: 2, paint: "Midnight Blue", price: 782 },
         { id: 3, paint: "Firebrick Red", price: 1470 },
         { id: 4, paint: "Spring Green", price: 1997 }
     ],
-    technology: [
+    technologies: [
         { id: 1, technology: "Basic Package -basic sound system", price: 106 },
         { id: 2, technology: "Navigation Package- includes integrated navigation controls", price: 321.4 },
         { id: 3, technology: "Visibility Package- includes side and reat cameras", price: 558.9 },
@@ -42,17 +42,17 @@ const database = {
     orderBuilder: {},
 }
 
-export const getInterior = () => {
-    return database.interior.map(interior => ({ ...interior }))
+export const getInteriors = () => {
+    return database.interiors.map(interior => ({ ...interior }))
 }
-export const getTechnology = () => {
-    return database.technology.map(technology => ({ ...technology }))
+export const getTechnologies = () => {
+    return database.technologies.map(technology => ({ ...technology }))
 }
-export const getPaint = () => {
-    return database.paint.map(paint => ({ ...paint }))
+export const getPaints = () => {
+    return database.paints.map(paint => ({ ...paint }))
 }
 export const getWheels = () => {
-    return database.wheels.map(wheels => ({ ...wheels }))
+    return database.wheels.map(wheel => ({ ...wheel }))
 }
 export const getOrders = () => {
     return database.customOrders.map(order => ({ ...order }))
