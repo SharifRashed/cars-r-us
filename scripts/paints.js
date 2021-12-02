@@ -1,7 +1,7 @@
-import { getTechnology } from "./database.js"
+import { getPaints } from "./database.js"
 
 
-const technology = getTechnology()
+const paints = getPaints()
 
 // document.addEventListener(
 //     "change",
@@ -22,19 +22,11 @@ document.addEventListener(
     }
 )
 
-export const technology = () => {
+export const paint = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements
-    const listItems = technology.map(technology => {
-
-        <select id="resource">
-            <option value="0">Prompt to select resource...</option>
-            <option value="1">First option</option>
-            <option value="2">Second option</option>
-            <option value="3">Third option</option>
-            <option value="4">Fourth option</option>
-        </select>
+    const listItems = paints.map(paint => {
 
         return `<li>
         <input type="radio" value="1" name="resource"> First option
