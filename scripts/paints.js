@@ -22,25 +22,38 @@ document.addEventListener(
     }
 )
 
+// export const paint = () => {
+//     let html = "<ul>"
+
+//     // Use .map() for converting objects to <li> elements
+//     const listItems = paints.map(paint => {
+
+//         return `<li>
+//         <input type="radio" value="1" name="resource"> First option
+//         <input type="radio" value="2" name="resource" checked> Second option
+//         <input type="radio" value="3" name="resource" checked> Third option
+//         <input type="radio" value="4" name="resource" checked> Fourth option
+//         </li>`
+//     })
+
+
+//     // Join all of the strings in the array into a single string
+//     html += listItems.join("")
+//     html += "</ul>"
+
+//     return html
+// }
+
 export const paint = () => {
-    let html = "<ul>"
-
-    // Use .map() for converting objects to <li> elements
-    const listItems = paints.map(paint => {
-
-        return `<li>
-        <input type="radio" value="1" name="resource"> First option
-        <input type="radio" value="2" name="resource" checked> Second option
-        <input type="radio" value="3" name="resource" checked> Third option
-        <input type="radio" value="4" name="resource" checked> Fourth option
-        </li>`
-    })
-
-
-    // Join all of the strings in the array into a single string
-    html += listItems.join("")
-    html += "</ul>"
-
-    return html
+    return `
+        <select id="paint">
+            <option value="0">Select a paint</option>
+            ${paints.map(
+        (paint) => {
+            return `<option value="${paint.id}">${paint.paint}</option>`
+        }
+    ).join("")
+        }
+        </select>
+    `
 }
-

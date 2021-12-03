@@ -18,23 +18,23 @@ document.addEventListener(
 
 export const carsRUs = () => {
     return `
-        <h1>CarsRUs</h1>
+        <h1>Cars-R-Us</h1>
 
         <article class="choices">
             <section class="choices__interiors options">
-                <h2>interiors</h2>
+                <h2>Interiors</h2>
                 ${Interiors()}
                 </section>
             <section class="choices__paint options">
-                <h2>paint</h2>
+                <h2>Paints</h2>
                 ${paint()}
             </section>
             <section class="choices__technologies options">
-                <h2>technologies</h2>
+                <h2>Technologies</h2>
                 ${Technologies()}
             </section>
             <section class="choices__wheels options">
-                <h2>wheels</h2>
+                <h2>Wheels</h2>
                 ${Wheels()}
             </section>
         </article>
