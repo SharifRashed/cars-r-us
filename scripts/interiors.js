@@ -24,26 +24,15 @@ document.addEventListener(
 )
 
 export const Interiors = () => {
-    let html = "<ul>"
-
-    // This is how you have been converting objects to <li> elements
-
-    // for (const metal of metals) {
-    //     html += `<li>
-    //         <input type="radio" name="metal" value="${metal.id}" /> ${metal.metal}
-    //     </li>`
-    // }
-
-    const listItems = interiors.map(interior => {
-
-        return `<li>
-        <input type="radio" name="interior" value="${interior.id}" /> ${interior.packageType}
-        </li>`
-    })
-
-    html += listItems.join("")
-    html += "</ul>"
-
-    return html
+    return `
+        <select id="interior">
+            <option value="0">Select an interior</option>
+            ${interiors.map(
+        (interior) => {
+            return `<option value="${interior.id}">${interior.style}</option>`
+        }
+    ).join("")
+        }
+        </select>
+    `
 }
-
