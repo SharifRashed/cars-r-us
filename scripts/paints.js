@@ -1,59 +1,39 @@
-import { getPaints } from "./database.js"
+import { getPaints, setPaint } from "./database.js"
 
 
 const paints = getPaints()
 
-// document.addEventListener(
-//     "change",
-//     (event) => {
-//         if (event.target.name === "paint") {
-//             window.alert(`User chose paint ${event.target.value}`)
-//         }
-//     }
-// )
 
 document.addEventListener(
     "change",
-    (changeEvent) => {
-        if (changeEvent.target.id === "resource") {
-            const chosenOption = changeEvent.target.value
-            console.log(chosenOption)  // "1" or "2"
+    (event) => {
+        if (event.target.name === "paint") {
+            setPaint(parseInt(event.target.value))
         }
     }
 )
 
-// export const paint = () => {
-//     let html = "<ul>"
+// document.addEventListener(
+//     "change",
+//     (changeEvent) => {
+//         if (changeEvent.target.id === "paint") {
+//             const chosenOption = changeEvent.target.value
+//             console.log(chosenOption)  // "1" or "2"
+//         }
+//     }
+// )
 
-//     // Use .map() for converting objects to <li> elements
-//     const listItems = paints.map(paint => {
+export const Paints = () => {
+    let html = "<ul>"
 
-//         return `<li>
-//         <input type="radio" value="1" name="resource"> First option
-//         <input type="radio" value="2" name="resource" checked> Second option
-//         <input type="radio" value="3" name="resource" checked> Third option
-//         <input type="radio" value="4" name="resource" checked> Fourth option
-//         </li>`
-//     })
+    const listItems = paints.map(paint => {
+        return `<li>
+            <input type="radio" name="paint" value="${paint.id}"  /> ${paint.paint}
+        </li>`
+    })
 
+    html += listItems.join("")
+    html += "</ul>"
 
-//     // Join all of the strings in the array into a single string
-//     html += listItems.join("")
-//     html += "</ul>"
-
-//     return html
-// }
-
-export const paint = () => {
-    return `
-        <select id="paint">
-            <option value="0">Select a paint</option>
-            ${paints.map(
-        (paint) => {
-            return `<option value="${paint.id}">${paint.paint}</option>`
-        }
-    ).join("")
-        }
-        </select>
-    `
+    return html
 }

@@ -3,54 +3,25 @@ import { getTechnologies, setTechnology } from "./database.js"
 
 const technologies = getTechnologies()
 
-// document.addEventListener(
-//     "change",
-//     (event) => {
-//         if (event.target.name === "paint") {
-//             window.alert(`User chose paint ${event.target.value}`)
-//         }
-//     }
-// )
-
 document.addEventListener(
     "change",
-    (changeEvent) => {
-        if (changeEvent.target.id === "technology") {
-            const chosenOption = changeEvent.target.value
-            console.log(chosenOption)  // "1" or "2"
+    (event) => {
+        if (event.target.name === "technology") {
+            setTechnology(parseInt(event.target.value))
         }
     }
 )
-
-// export const Technologies = () => {
-//     let html = "<ul>"
-
-//     // Use .map() for converting objects to <li> elements
-//     const listItems = technologies.map(technology => {
-
-//         return `<li>
-//         <input type="radio" name="technology" value="${technology.id}" /> ${technology.packageType}
-//         </li>`
-//     })
-
-
-//     // Join all of the strings in the array into a single string
-//     html += listItems.join("")
-//     html += "</ul>"
-
-//     return html
-// }
-
 export const Technologies = () => {
-    return `
-        <select id="tech">
-            <option value="0">Select a technology package</option>
-            ${technologies.map(
-        (technology) => {
-            return `<option value="${technology.id}">${technology.technology}</option>`
-        }
-    ).join("")
-        }
-        </select>
-    `
+    let html = "<ul>"
+
+    const listItems = technologies.map(technology => {
+        return `<li>
+            <input type="radio" name="technology" value="${technology.id}"  /> ${technology.technology}
+        </li>`
+    })
+
+    html += listItems.join("")
+    html += "</ul>"
+
+    return html
 }

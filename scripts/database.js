@@ -20,23 +20,24 @@ const database = {
     ],
     technologies: [
         { id: 1, technology: "Basic Package -basic sound system", price: 106 },
-        { id: 2, technology: "Navigation Package- includes integrated navigation controls", price: 321.4 },
-        { id: 3, technology: "Visibility Package- includes side and reat cameras", price: 558.9 },
-        { id: 4, technology: "Ultra Package -includes navigation and visibility packages", price: 795.45 }
+        { id: 2, technology: "Navigation Package- includes integrated navigation controls", price: 321 },
+        { id: 3, technology: "Visibility Package- includes side and reat cameras", price: 558 },
+        { id: 4, technology: "Ultra Package -includes navigation and visibility packages", price: 795 }
     ],
     wheels: [
-        { id: 1, wheel: "17-inch Pair Radial", price: 43.42 },
-        { id: 2, wheel: "17-inch Pair Radial Black", price: 59.4 },
-        { id: 3, wheel: "18-inch Pair Spoke Silver", price: 81.9 },
-        { id: 4, wheel: "18-inch Pair Spoke Black", price: 95.45 }
+        { id: 1, wheel: "17-inch Pair Radial", price: 43 },
+        { id: 2, wheel: "17-inch Pair Radial Black", price: 59 },
+        { id: 3, wheel: "18-inch Pair Spoke Silver", price: 81 },
+        { id: 4, wheel: "18-inch Pair Spoke Black", price: 95 }
     ],
     customOrders: [
         {
             id: 1,
-            metalId: 3,
-            sizeId: 2,
-            styleId: 3,
-            timestamp: 1614659931693
+            interiorId: 3,
+            technologyId: 2,
+            wheelsId: 3,
+            paintId: 3,
+            timestamp: 161465993169
         }
     ],
     orderBuilder: {},
