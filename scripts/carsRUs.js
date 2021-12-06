@@ -1,9 +1,9 @@
 import { Interiors } from "./interiors.js"
-import { paint } from "./paints.js"
+import { Paints } from "./paints.js"
 import { Technologies } from "./technologies.js"
 import { Wheels } from "./wheels.js"
 import { addCustomOrder } from "./database.js"
-//import { Orders } from "./orders.js"
+import { Orders } from "./orders.js"
 //import { renderAllHTML } from "./main.js"
 
 
@@ -27,7 +27,7 @@ export const carsRUs = () => {
                 </section>
             <section class="choices__paint options">
                 <h2>Paints</h2>
-                ${paint()}
+                ${Paints()}
             </section>
             <section class="choices__technologies options">
                 <h2>Technologies</h2>
@@ -41,6 +41,11 @@ export const carsRUs = () => {
 
         <article>
             <button id="orderButton">Create Custom Order</button>
+        </article
+
+        <article class= "customOrders">
+            <h2>Custom Car Orders</h2>
+            ${Orders()}
         </article>
 
     `
